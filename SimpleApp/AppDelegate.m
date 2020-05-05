@@ -7,18 +7,61 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
+#import "LoginViewController.h"
+#import "CollectionViewController.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<UITabBarControllerDelegate>
 
 @end
 
 @implementation AppDelegate
-
+ 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+   
+         //设置 UIWindow
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds] ];
+    // 底部tabbar
+    UITabBarController *tabbar = [[UITabBarController alloc] init];
+    // 管理 UIViewController 的跳转
+    UINavigationController *uinavigatController =[[UINavigationController alloc] initWithRootViewController:tabbar];
+    
+    ViewController  *viewController =[[ViewController alloc] init];
+    viewController.view.backgroundColor = [UIColor greenColor];
+    viewController.tabBarItem.title = @"首页";
+    viewController.tabBarItem.image = [UIImage imageNamed:@"首页1-1"];
+    viewController.tabBarItem.selectedImage = [UIImage imageNamed:@"首页1"];
+   // [viewController.navigationController setNavigationBarHidden:NO];
+    
+    CollectionViewController  *viewController2 =[[CollectionViewController alloc] init];
+     viewController2.view.backgroundColor = [UIColor redColor];
+    viewController2.tabBarItem.title = @"订单";
+    viewController2.tabBarItem.image = [UIImage imageNamed:@"订单2-1"];
+    viewController2.tabBarItem.selectedImage = [UIImage imageNamed:@"订单1"];
+   
+    
+    LoginViewController  *viewController4 =[[LoginViewController alloc] init];
+     //viewController4.view.backgroundColor = [UIColor blueColor];
+    viewController4.tabBarItem.title = @"我的";
+    viewController4.tabBarItem.image = [UIImage imageNamed:@"我的2"];
+    viewController4.tabBarItem.selectedImage = [UIImage imageNamed:@"我的2-1"];
+    
+    [tabbar setViewControllers:@[viewController,viewController2,viewController4]];
+    // 可以理解为 tabbar 选项卡的监听
+    tabbar.delegate = self;
+    //如果要底部不出现 tabbar 必须设置 rootViewController 为 uinavigatController
+    self.window.rootViewController = uinavigatController;
+    [self.window makeKeyAndVisible];
     return YES;
 }
+
+// 配合tabbar.delegate = self;  当点击tabbar 会回调此方法
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
+    NSLog(@"did select");
+}
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
