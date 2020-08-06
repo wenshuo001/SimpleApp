@@ -10,6 +10,7 @@
 #import "ViewController.h"
 #import "LoginViewController.h"
 #import "CollectionViewController.h"
+#import "GTRecommendViewController.h"
 
 @interface AppDelegate ()<UITabBarControllerDelegate>
 
@@ -42,9 +43,9 @@
     viewController2.tabBarItem.selectedImage = [UIImage imageNamed:@"订单1"];
    
     
-    LoginViewController  *viewController4 =[[LoginViewController alloc] init];
-     //viewController4.view.backgroundColor = [UIColor blueColor];
-    viewController4.tabBarItem.title = @"我的";
+    GTRecommendViewController  *viewController4 = [[GTRecommendViewController alloc] init];
+    viewController4.view.backgroundColor = [UIColor greenColor];
+    viewController4.tabBarItem.title = @"推荐";
     viewController4.tabBarItem.image = [UIImage imageNamed:@"我的2"];
     viewController4.tabBarItem.selectedImage = [UIImage imageNamed:@"我的2-1"];
     
