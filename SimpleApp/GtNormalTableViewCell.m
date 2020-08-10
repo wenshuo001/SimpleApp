@@ -15,6 +15,7 @@
 @property(nonatomic,strong,readwrite) UILabel *contentLable;
 @property(nonatomic,strong,readwrite) UILabel *timeLable;
 @property(nonatomic,strong,readwrite) UIImageView *rightImageView;
+@property(nonatomic,strong,readwrite) UIButton *deleteButton;
 @end
 
 @implementation GtNormalTableViewCell
@@ -54,10 +55,18 @@
             self.timeLable;
         })];
         [self.contentView addSubview: ({
-            self.rightImageView = [[UIImageView alloc] initWithFrame:CGRectMake(280, 15, 70, 70)];
+            self.rightImageView = [[UIImageView alloc] initWithFrame:CGRectMake(330, 15, 70, 70)];
             self.rightImageView.contentMode = UIViewContentModeScaleAspectFill; // IamgeView 显示类型
             self.rightImageView;
         })];
+        [self.contentView addSubview: ({
+            self.deleteButton = [[UIButton alloc] initWithFrame:CGRectMake(290, 80, 30, 20)];
+            [self.deleteButton setTitle:@"X" forState:UIControlStateNormal];
+            [self.deleteButton setTitle:@"V" forState:UIControlStateHighlighted];
+            self.deleteButton.backgroundColor = [UIColor blueColor];
+            self.deleteButton;
+        })];
+        
         
     }
     return self;

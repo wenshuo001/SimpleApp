@@ -6,17 +6,17 @@
 //  Copyright © 2020年 Wenshuo. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "GTNewsViewController.h"
 #import "GtNormalTableViewCell.h"
 #import "GTListLoader.h"
 #import <AFNetworking.h>
 // UITableViewDelegate 设置具体行高度 头尾视图 实现协议
-@interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface GTNewsViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property(nonatomic,strong,readwrite) GTListLoader *loader;
 @end
 
-@implementation ViewController
+@implementation GTNewsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

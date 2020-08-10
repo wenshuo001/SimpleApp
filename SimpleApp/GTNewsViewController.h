@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  GTNewsViewController.h
 //  SimpleApp
 //
 //  Created by Wenshuo on 2020/3/22.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface GTNewsViewController : UIViewController
 
 
 @end

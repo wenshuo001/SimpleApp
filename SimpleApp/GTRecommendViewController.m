@@ -43,6 +43,7 @@
     }
     scrollView.pagingEnabled = YES; // 滑到一半自动收缩
     [self.view addSubview:scrollView];
+    
 }
 
 /*
@@ -54,5 +55,32 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+-(IBAction)showSheetDialog:(UIButton *)sender{
+    //显示弹出框列表选择
+       UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Title"
+                                                                      message:@"This is an Sheet."
+                                                               preferredStyle:UIAlertControllerStyleActionSheet];
+       
+       UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel
+                                                             handler:^(UIAlertAction * action) {
+                                                                 //响应事件
+                                                                 NSLog(@"action = %@", action);
+                                                             }];
+       UIAlertAction* deleteAction = [UIAlertAction actionWithTitle:@"删除" style:UIAlertActionStyleDestructive
+                                                            handler:^(UIAlertAction * action) {
+                                                                //响应事件
+                                                                NSLog(@"action = %@", action);
+                                                            }];
+       UIAlertAction* saveAction = [UIAlertAction actionWithTitle:@"保存" style:UIAlertActionStyleDefault
+                                                            handler:^(UIAlertAction * action) {
+                                                                //响应事件
+                                                                NSLog(@"action = %@", action);
+                                                            }];
+       [alert addAction:saveAction];
+       [alert addAction:cancelAction];
+       [alert addAction:deleteAction];
+       [self presentViewController:alert animated:YES completion:nil];
+}
 
 @end

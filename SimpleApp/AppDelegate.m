@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+#import "GTNewsViewController.h"
 #import "LoginViewController.h"
 #import "CollectionViewController.h"
 #import "GTRecommendViewController.h"
@@ -29,7 +29,7 @@
     // 管理 UIViewController 的跳转
     UINavigationController *uinavigatController =[[UINavigationController alloc] initWithRootViewController:tabbar];
     
-    ViewController  *viewController =[[ViewController alloc] init];
+    GTNewsViewController  *viewController =[[GTNewsViewController alloc] init];
     viewController.view.backgroundColor = [UIColor greenColor];
     viewController.tabBarItem.title = @"首页";
     viewController.tabBarItem.image = [UIImage imageNamed:@"首页1-1"];

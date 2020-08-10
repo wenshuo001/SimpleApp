@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		704CF3FC242BABDB00FA75A1 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 704CF3FB242BABDB00FA75A1 /* LoginViewController.m */; };
 		70E914DE2427160C00FD835E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E914DD2427160C00FD835E /* AppDelegate.m */; };
-		70E914E12427160C00FD835E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E914E02427160C00FD835E /* ViewController.m */; };
+		70E914E12427160C00FD835E /* GTNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E914E02427160C00FD835E /* GTNewsViewController.m */; };
 		70E914E42427160C00FD835E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70E914E22427160C00FD835E /* Main.storyboard */; };
 		70E914E62427160D00FD835E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70E914E52427160D00FD835E /* Assets.xcassets */; };
 		70E914E92427160D00FD835E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70E914E72427160D00FD835E /* LaunchScreen.storyboard */; };
@@ -65,8 +65,8 @@
 		70E914D92427160C00FD835E /* SimpleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70E914DC2427160C00FD835E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		70E914DD2427160C00FD835E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		70E914DF2427160C00FD835E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		70E914E02427160C00FD835E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		70E914DF2427160C00FD835E /* GTNewsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTNewsViewController.h; sourceTree = "<group>"; };
+		70E914E02427160C00FD835E /* GTNewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTNewsViewController.m; sourceTree = "<group>"; };
 		70E914E32427160C00FD835E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		70E914E52427160D00FD835E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		70E914E82427160D00FD835E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -179,8 +179,8 @@
 				70EDC993243CAB2B007DDF1A /* loader */,
 				70E914DC2427160C00FD835E /* AppDelegate.h */,
 				70E914DD2427160C00FD835E /* AppDelegate.m */,
-				70E914DF2427160C00FD835E /* ViewController.h */,
-				70E914E02427160C00FD835E /* ViewController.m */,
+				70E914DF2427160C00FD835E /* GTNewsViewController.h */,
+				70E914E02427160C00FD835E /* GTNewsViewController.m */,
 				70E914E22427160C00FD835E /* Main.storyboard */,
 				70E914E52427160D00FD835E /* Assets.xcassets */,
 				70E914E72427160D00FD835E /* LaunchScreen.storyboard */,
@@ -318,7 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				704CF3FC242BABDB00FA75A1 /* LoginViewController.m in Sources */,
-				70E914E12427160C00FD835E /* ViewController.m in Sources */,
+				70E914E12427160C00FD835E /* GTNewsViewController.m in Sources */,
 				EA8566F924DA7535002B1254 /* GTRecommendViewController.m in Sources */,
 				70E914EC2427160E00FD835E /* main.m in Sources */,
 				70EDC98F2439912B007DDF1A /* CollectionViewController.m in Sources */,
