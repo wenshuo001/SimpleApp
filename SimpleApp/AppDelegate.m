@@ -30,10 +30,7 @@
     UINavigationController *uinavigatController =[[UINavigationController alloc] initWithRootViewController:tabbar];
     
     GTNewsViewController  *viewController =[[GTNewsViewController alloc] init];
-    viewController.view.backgroundColor = [UIColor greenColor];
-    viewController.tabBarItem.title = @"首页";
-    viewController.tabBarItem.image = [UIImage imageNamed:@"首页1-1"];
-    viewController.tabBarItem.selectedImage = [UIImage imageNamed:@"首页1"];
+
    // [viewController.navigationController setNavigationBarHidden:NO];
     
     CollectionViewController  *viewController2 =[[CollectionViewController alloc] init];

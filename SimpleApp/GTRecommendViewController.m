@@ -43,7 +43,11 @@
     }
     scrollView.pagingEnabled = YES; // 滑到一半自动收缩
     [self.view addSubview:scrollView];
-    
+    [self showSheetDialog];
+}
+
+- (void)extracted:(UIAlertController *)alert {
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 /*
@@ -56,7 +60,7 @@
 }
 */
 
--(IBAction)showSheetDialog:(UIButton *)sender{
+-(void)showSheetDialog{
     //显示弹出框列表选择
        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Title"
                                                                       message:@"This is an Sheet."
@@ -80,7 +84,7 @@
        [alert addAction:saveAction];
        [alert addAction:cancelAction];
        [alert addAction:deleteAction];
-       [self presentViewController:alert animated:YES completion:nil];
+    [self extracted:alert];
 }
 
 @end

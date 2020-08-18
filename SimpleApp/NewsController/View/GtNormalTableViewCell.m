@@ -24,7 +24,7 @@
     self= [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         [self.contentView addSubview: ({
-            self.titleLable = [[UILabel alloc] initWithFrame:CGRectMake(20, 15, 300, 50)];
+            self.titleLable = [[UILabel alloc] initWithFrame:CGRectMake(20, 15, 270, 50)];
             
             self.titleLable.font = [UIFont systemFontOfSize: 16];
             self.titleLable.textColor = [UIColor blackColor];
@@ -32,7 +32,7 @@
         })];
         
         [self.contentView addSubview: ({
-            self.sourceLable = [[UILabel alloc] initWithFrame:CGRectMake(20, 80, 50, 20)];
+            self.sourceLable = [[UILabel alloc] initWithFrame:CGRectMake(20, 70, 50, 20)];
             
             self.sourceLable.textColor = [UIColor grayColor];
             self.sourceLable.font = [UIFont systemFontOfSize: 12];
@@ -40,7 +40,7 @@
         })];
         
         [self.contentView addSubview: ({
-            self.contentLable = [[UILabel alloc] initWithFrame:CGRectMake(80, 80, 50, 20)];
+            self.contentLable = [[UILabel alloc] initWithFrame:CGRectMake(100, 70, 50, 20)];
             
             self.contentLable.font = [UIFont systemFontOfSize: 12];
             self.contentLable.textColor = [UIColor grayColor];
@@ -48,22 +48,23 @@
         })];
         
         [self.contentView addSubview: ({
-            self.timeLable = [[UILabel alloc] initWithFrame:CGRectMake(140, 80, 50, 20)];
+            self.timeLable = [[UILabel alloc] initWithFrame:CGRectMake(150, 70, 50, 20)];
             
             self.timeLable.font = [UIFont systemFontOfSize: 12];
             self.timeLable.textColor = [UIColor grayColor];
             self.timeLable;
         })];
         [self.contentView addSubview: ({
-            self.rightImageView = [[UIImageView alloc] initWithFrame:CGRectMake(330, 15, 70, 70)];
+            self.rightImageView = [[UIImageView alloc] initWithFrame:CGRectMake(330, 15, 100, 70)];
             self.rightImageView.contentMode = UIViewContentModeScaleAspectFill; // IamgeView 显示类型
             self.rightImageView;
         })];
         [self.contentView addSubview: ({
-            self.deleteButton = [[UIButton alloc] initWithFrame:CGRectMake(290, 80, 30, 20)];
+            self.deleteButton = [[UIButton alloc] initWithFrame:CGRectMake(280, 70, 10, 10)];
             [self.deleteButton setTitle:@"X" forState:UIControlStateNormal];
             [self.deleteButton setTitle:@"V" forState:UIControlStateHighlighted];
-            self.deleteButton.backgroundColor = [UIColor blueColor];
+            [self.deleteButton setTitleColor:[UIColor grayColor]forState:UIControlStateNormal];
+            [self.deleteButton addTarget:self action:@selector(deleteButtonClick) forControlEvents:UIControlEventTouchUpInside];
             self.deleteButton;
         })];
         
@@ -88,5 +89,11 @@
     
     self.rightImageView.image = [UIImage imageNamed:@"立即更新"];
 }
+
+//- (void)deleteButtonClick {
+//    if (self.delegate && [self.delegate respondsToSelector:@selector(tableViewCell:clickDeleteButton:)]) {
+//        [self.delegate tableViewCell:self clickDeleteButton:self.deleteButton];
+//    }
+//}
 
 @end

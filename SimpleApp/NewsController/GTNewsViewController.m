@@ -10,6 +10,8 @@
 #import "GtNormalTableViewCell.h"
 #import "GTListLoader.h"
 #import <AFNetworking.h>
+#import "GTDetailViewController.h"
+
 // UITableViewDelegate 设置具体行高度 头尾视图 实现协议
 @interface GTNewsViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -17,6 +19,19 @@
 @end
 
 @implementation GTNewsViewController
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+    
+        self.tabBarItem.title = @"新闻";
+        self.tabBarItem.image = [UIImage imageNamed:@"首页1-1"];
+        self.tabBarItem.selectedImage = [UIImage imageNamed:@"首页1"];
+    
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -56,13 +71,9 @@
 
 //设置表格视图有多少行
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    return 100;
 }
 
-// 设置有几组
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
-}
 
 
 //设置 cell 视图
@@ -131,6 +142,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"这是第 %@",indexPath);
+    GTDetailViewController *controller = [[GTDetailViewController alloc] init];
+    controller.title = [NSString stringWithFormat:@"%@",@(indexPath.row)];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 
@@ -161,5 +175,6 @@
     
     return @[@"1",@"2"];
 }
+
 
 @end
