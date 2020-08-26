@@ -8,6 +8,26 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GtNormalTableViewCell : UITableViewCell
--(void) layouttableViewCell;
+NS_ASSUME_NONNULL_BEGIN
+
+@class GTListItem;
+/**
+ delegate  和 java 接口回调差不多
+ 声明delegate , 点击删除按钮
+ */
+@protocol GTNormalTableViewCellDelegate <NSObject>
+- (void)tableViewCell:(UITableViewCell *)tableViewCell clickDeleteButton:(UIButton *)deleteButton;
 @end
+
+@interface GtNormalTableViewCell : UITableViewCell
+
+-(void) layouttableViewCell;
+
+@property (nonatomic, weak, readwrite) id<GTNormalTableViewCellDelegate> delegate;
+
+-(void)layoutTableViewCellWithItem:(GTListItem *)item;
+@end
+
+NS_ASSUME_NONNULL_END
+
+

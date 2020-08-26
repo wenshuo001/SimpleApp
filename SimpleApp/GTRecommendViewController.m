@@ -62,29 +62,29 @@
 
 -(void)showSheetDialog{
     //显示弹出框列表选择
-       UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Title"
-                                                                      message:@"This is an Sheet."
-                                                               preferredStyle:UIAlertControllerStyleActionSheet];
-       
-       UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel
-                                                             handler:^(UIAlertAction * action) {
-                                                                 //响应事件
-                                                                 NSLog(@"action = %@", action);
-                                                             }];
-       UIAlertAction* deleteAction = [UIAlertAction actionWithTitle:@"删除" style:UIAlertActionStyleDestructive
-                                                            handler:^(UIAlertAction * action) {
-                                                                //响应事件
-                                                                NSLog(@"action = %@", action);
-                                                            }];
-       UIAlertAction* saveAction = [UIAlertAction actionWithTitle:@"保存" style:UIAlertActionStyleDefault
-                                                            handler:^(UIAlertAction * action) {
-                                                                //响应事件
-                                                                NSLog(@"action = %@", action);
-                                                            }];
-       [alert addAction:saveAction];
-       [alert addAction:cancelAction];
-       [alert addAction:deleteAction];
-    [self extracted:alert];
+//       UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Title"
+//                                                                      message:@"This is an Sheet."
+//                                                               preferredStyle:UIAlertControllerStyleActionSheet];
+//
+//       UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel
+//                                                             handler:^(UIAlertAction * action) {
+//                                                                 //响应事件
+//                                                                 NSLog(@"action = %@", action);
+//                                                             }];
+//       UIAlertAction* deleteAction = [UIAlertAction actionWithTitle:@"删除" style:UIAlertActionStyleDestructive
+//                                                            handler:^(UIAlertAction * action) {
+//                                                                //响应事件
+//                                                                NSLog(@"action = %@", action);
+//                                                            }];
+//       UIAlertAction* saveAction = [UIAlertAction actionWithTitle:@"保存" style:UIAlertActionStyleDefault
+//                                                            handler:^(UIAlertAction * action) {
+//                                                                //响应事件
+//                                                                NSLog(@"action = %@", action);
+//                                                            }];
+//       [alert addAction:saveAction];
+//       [alert addAction:cancelAction];
+//       [alert addAction:deleteAction];
+//    [self extracted:alert];
 }
 
 @end

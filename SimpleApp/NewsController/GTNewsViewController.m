@@ -9,13 +9,16 @@
 #import "GTNewsViewController.h"
 #import "GtNormalTableViewCell.h"
 #import "GTListLoader.h"
+#import "GTDeleteCellView.h"
+
 #import <AFNetworking.h>
 #import "GTDetailViewController.h"
 
 // UITableViewDelegate 设置具体行高度 头尾视图 实现协议
-@interface GTNewsViewController ()<UITableViewDataSource,UITableViewDelegate>
-
-@property(nonatomic,strong,readwrite) GTListLoader *loader;
+@interface GTNewsViewController ()<UITableViewDataSource,UITableViewDelegate,GTNormalTableViewCellDelegate>
+@property (nonatomic, strong, readwrite) UITableView *tableView;
+@property(nonatomic,strong,readwrite) GTListLoader *listLoader;
+@property (nonatomic, strong, readwrite) NSArray *dataArray;
 @end
 
 @implementation GTNewsViewController
@@ -35,29 +38,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-// 创建一个View
-//    UIView *view =[[UIView alloc] init];
-//    view.backgroundColor =[UIColor redColor];
-//    view.frame = CGRectMake(100, 100, 100, 100);
-//    [self.view addSubview: view];
-// 给view 添加点击事件
-//    UITapGestureRecognizer *uiTap=[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushCrotroller)];
-//    [view addGestureRecognizer:uiTap];
-  
-    //隐藏头部标题栏 Navigation
-  
-// 创建 UITableView 也就是列表
-    //style  UITableViewStylePlain 规范的列表视图
-    //style  UITableViewStyleGrouped 分组列表视图
-    
-    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
-    tableView.dataSource = self;
-    tableView.delegate = self;
+
+    _tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
+    _tableView.dataSource = self;
+    _tableView.delegate = self;
     //tableView.editing = YES;
-    [self.view addSubview: tableView];
+    [self.view addSubview: _tableView];
     
-    self.loader =[[GTListLoader alloc]init];
-    [self.loader loadListData];
+    self.listLoader =[[GTListLoader alloc]init];
+    [self.listLoader loadListData];
+    
+    __weak typeof(self)wself = self;
+    [self.listLoader loadListDataWithFinishBlock:^(BOOL success,NSArray<GTListItem *> * _Nullable dataArray){
+        __strong typeof(wself) strongSelf = wself;
+        strongSelf.dataArray  = dataArray;
+        [strongSelf.tableView reloadData];
+    }];
     
 //
 //    [[AFHTTPSessionManager manager] GET:@"https://wanandroid.com/wxarticle/chapters/json" parameters:nil headers:nil progress:^(NSProgress * _Nonnull downloadProgress) {
@@ -71,7 +67,7 @@
 
 //设置表格视图有多少行
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 100;
+    return self.dataArray.count;
 }
 
 
@@ -83,9 +79,11 @@
     if (cell == nil) {
         //如果没有注册的cell 重新注册一个
         cell = [[GtNormalTableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"id"];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.delegate = self;
     }
     
-    [cell layouttableViewCell];
+    [cell layoutTableViewCellWithItem:[self.dataArray objectAtIndex:indexPath.row]];
     return cell;
 }
 
@@ -109,39 +107,15 @@
 
 // 设置行高
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if(indexPath.section == 0){
+     
         return 100;
-    }else{
-        return 40;
-    }
+  
 }
-
-// 分区头视图高度
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 50;
-}
-
-//分区尾视图高度
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    return 50;
-}
-
-//设置分区的头视图
-- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0,0,self.view.frame.size.width,50)];
-    view.backgroundColor=[UIColor greenColor];
-    return view;
-}   // custom view for header. will be adjusted to default or specified header height
-
-//设置分区的尾视图
-- (nullable UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
-    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0,0,self.view.frame.size.width,50)];
-    view.backgroundColor=[UIColor blueColor];
-    return view;
-}   // custom view for footer. will be adjusted to default or specified footer height
-
+ 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"这是第 %@",indexPath);
+    GTListItem *item = [self.dataArray objectAtIndex:indexPath.row];
+    
     GTDetailViewController *controller = [[GTDetailViewController alloc] init];
     controller.title = [NSString stringWithFormat:@"%@",@(indexPath.row)];
     [self.navigationController pushViewController:controller animated:YES];
@@ -175,6 +149,25 @@
     
     return @[@"1",@"2"];
 }
+ 
+- (void)tableViewCell:(UITableViewCell *)tableViewCell clickDeleteButton:(UIButton *)deleteButton {
+    
+    //动画演示
+    GTDeleteCellView *deleteView = [[GTDeleteCellView alloc] initWithFrame:self.view.bounds];
+    CGRect rect = [tableViewCell convertRect:deleteButton.frame toView:nil];
 
-
+    __weak typeof(self)wself = self;
+    [deleteView showDeleteViewFromPoint:rect.origin clickBlock:^{
+         __strong typeof(wself) strongSelf = wself;
+        NSIndexPath *delIndexPath = [strongSelf.tableView indexPathForCell:tableViewCell];
+        if (strongSelf.dataArray.count > delIndexPath.row) {
+            //删除数据
+            NSMutableArray *dataArrayTmp = [strongSelf.dataArray mutableCopy];
+            [dataArrayTmp removeObjectAtIndex:delIndexPath.row];
+            strongSelf.dataArray = [dataArrayTmp copy];
+            //删除cell
+            [strongSelf.tableView deleteRowsAtIndexPaths:@[delIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        }
+     }];
+}
 @end

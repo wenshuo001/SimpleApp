@@ -20,6 +20,8 @@
 		9329D8D9AE97A1465B1AFE40 /* libPods-SimpleApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18B737FFDE204F09E407D63D /* libPods-SimpleApp.a */; };
 		EA09915C24EB9D7D00568A79 /* GTListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EA09915B24EB9D7D00568A79 /* GTListItem.m */; };
 		EA09916024EBC0BC00568A79 /* GTDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA09915F24EBC0BC00568A79 /* GTDetailViewController.m */; };
+		EA09916324ED2DA200568A79 /* GTDeleteCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA09916224ED2DA200568A79 /* GTDeleteCellView.m */; };
+		EA09916724ED405A00568A79 /* GTScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = EA09916624ED405A00568A79 /* GTScreen.m */; };
 		EA8566F924DA7535002B1254 /* GTRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8566F824DA7535002B1254 /* GTRecommendViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +87,10 @@
 		EA09915B24EB9D7D00568A79 /* GTListItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTListItem.m; sourceTree = "<group>"; };
 		EA09915E24EBC0BC00568A79 /* GTDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTDetailViewController.h; sourceTree = "<group>"; };
 		EA09915F24EBC0BC00568A79 /* GTDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTDetailViewController.m; sourceTree = "<group>"; };
+		EA09916124ED2DA200568A79 /* GTDeleteCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTDeleteCellView.h; sourceTree = "<group>"; };
+		EA09916224ED2DA200568A79 /* GTDeleteCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTDeleteCellView.m; sourceTree = "<group>"; };
+		EA09916524ED405A00568A79 /* GTScreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTScreen.h; sourceTree = "<group>"; };
+		EA09916624ED405A00568A79 /* GTScreen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTScreen.m; sourceTree = "<group>"; };
 		EA8566F724DA7535002B1254 /* GTRecommendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTRecommendViewController.h; sourceTree = "<group>"; };
 		EA8566F824DA7535002B1254 /* GTRecommendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTRecommendViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -182,6 +188,7 @@
 		70E914DB2427160C00FD835E /* SimpleApp */ = {
 			isa = PBXGroup;
 			children = (
+				EA09916424ED402800568A79 /* Utils */,
 				70EDC993243CAB2B007DDF1A /* loader */,
 				EA09915724EB924100568A79 /* NewsController */,
 				70E914DC2427160C00FD835E /* AppDelegate.h */,
@@ -245,6 +252,8 @@
 			children = (
 				70EDC990243C3A21007DDF1A /* GtNormalTableViewCell.h */,
 				70EDC991243C3A21007DDF1A /* GtNormalTableViewCell.m */,
+				EA09916124ED2DA200568A79 /* GTDeleteCellView.h */,
+				EA09916224ED2DA200568A79 /* GTDeleteCellView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -265,6 +274,15 @@
 				EA09915F24EBC0BC00568A79 /* GTDetailViewController.m */,
 			);
 			path = detail;
+			sourceTree = "<group>";
+		};
+		EA09916424ED402800568A79 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				EA09916524ED405A00568A79 /* GTScreen.h */,
+				EA09916624ED405A00568A79 /* GTScreen.m */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -359,6 +377,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA09916724ED405A00568A79 /* GTScreen.m in Sources */,
 				704CF3FC242BABDB00FA75A1 /* LoginViewController.m in Sources */,
 				70E914E12427160C00FD835E /* GTNewsViewController.m in Sources */,
 				EA8566F924DA7535002B1254 /* GTRecommendViewController.m in Sources */,
@@ -368,6 +387,7 @@
 				EA09916024EBC0BC00568A79 /* GTDetailViewController.m in Sources */,
 				70EDC996243CAB84007DDF1A /* GTListLoader.m in Sources */,
 				70E914DE2427160C00FD835E /* AppDelegate.m in Sources */,
+				EA09916324ED2DA200568A79 /* GTDeleteCellView.m in Sources */,
 				70EDC992243C3A21007DDF1A /* GtNormalTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

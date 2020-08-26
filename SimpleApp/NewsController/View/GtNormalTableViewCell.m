@@ -7,7 +7,8 @@
 //
 
 #import "GtNormalTableViewCell.h"
-
+#import "GTListItem.h"
+#import "SDWebImage.h"
 @interface GtNormalTableViewCell()
 
 @property(nonatomic,strong,readwrite) UILabel *titleLable;
@@ -90,10 +91,32 @@
     self.rightImageView.image = [UIImage imageNamed:@"立即更新"];
 }
 
-//- (void)deleteButtonClick {
-//    if (self.delegate && [self.delegate respondsToSelector:@selector(tableViewCell:clickDeleteButton:)]) {
-//        [self.delegate tableViewCell:self clickDeleteButton:self.deleteButton];
-//    }
-//}
+ -(void)layoutTableViewCellWithItem:(GTListItem *)item {
+     self.titleLable.text = item.title;
+     self.sourceLable.text = item.authorName;
+       [self.sourceLable sizeToFit];
+       
+     self.contentLable.text = item.category;
+        [self.contentLable sizeToFit]; //通过view内容来确定它自己的大小
+       self.contentLable.frame = CGRectMake(self.sourceLable.frame.origin.x+self.sourceLable.frame.size.width+15, self.contentLable.frame.origin.y, self.contentLable.frame.size.width, self.contentLable.frame.size.height);
+       
+       
+     self.timeLable.text = item.date;
+        [self.timeLable sizeToFit];  //通过view内容来确定它自己的大小
+        self.timeLable.frame = CGRectMake(self.contentLable.frame.origin.x+self.contentLable.frame.size.width+15, self.timeLable.frame.origin.y, self.timeLable.frame.size.width, self.timeLable.frame.size.height);
+       
+     [self.rightImageView sd_setImageWithURL:[NSURL URLWithString:item.thumbnail_pic_s] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+         //处理业务逻辑，通过cacheType 判断图片是否命中缓存
+     }];
+     
+    
+ }
+
+
+- (void)deleteButtonClick {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(tableViewCell:clickDeleteButton:)]) {
+        [self.delegate tableViewCell:self clickDeleteButton:self.deleteButton];
+    }
+}
 
 @end

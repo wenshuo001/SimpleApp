@@ -5,11 +5,11 @@
 //  Created by 库兹马 on 2020/8/18.
 //  Copyright © 2020 Wenshuo. All rights reserved.
 //
-
+#import "GTNormalTableViewCell.h"
 #import "GTDetailViewController.h"
 #import <WebKit/WebKit.h>
 
-@interface GTDetailViewController()<WKNavigationDelegate>
+@interface GTDetailViewController()<WKNavigationDelegate, GTNormalTableViewCellDelegate>
 @property(nonatomic,strong,readwrite) WKWebView *webView;
 //进度条
 @property(nonatomic,strong,readwrite)UIProgressView *progressView;
@@ -48,7 +48,7 @@
     NSLog(@"");
 }
 
-//进度监听回调
+//加载进度监听回调
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
     self.progressView.progress = self.webView.estimatedProgress;
 }
@@ -58,6 +58,11 @@
 - (void)dealloc
 {
     [self.webView removeObserver:self forKeyPath:@"estimatedProgress"];
+}
+
+//删除回调
+- (void)tableViewCell:(UITableViewCell *)tabViewCell clickDelegateButton:(UIButton *)deleteButton{
+    
 }
 
 @end
