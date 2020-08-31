@@ -34,10 +34,8 @@
    // [viewController.navigationController setNavigationBarHidden:NO];
     
     CollectionViewController  *viewController2 =[[CollectionViewController alloc] init];
-     viewController2.view.backgroundColor = [UIColor redColor];
-    viewController2.tabBarItem.title = @"订单";
-    viewController2.tabBarItem.image = [UIImage imageNamed:@"订单2-1"];
-    viewController2.tabBarItem.selectedImage = [UIImage imageNamed:@"订单1"];
+ 
+    
    
     
     GTRecommendViewController  *viewController4 = [[GTRecommendViewController alloc] init];

@@ -22,6 +22,9 @@
 		EA09916024EBC0BC00568A79 /* GTDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA09915F24EBC0BC00568A79 /* GTDetailViewController.m */; };
 		EA09916324ED2DA200568A79 /* GTDeleteCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA09916224ED2DA200568A79 /* GTDeleteCellView.m */; };
 		EA09916724ED405A00568A79 /* GTScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = EA09916624ED405A00568A79 /* GTScreen.m */; };
+		EA64D4BD24F7A4660078A263 /* GTVideoCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA64D4BC24F7A4660078A263 /* GTVideoCoverView.m */; };
+		EA64D4C024F7A55D0078A263 /* GTVideoToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = EA64D4BF24F7A55D0078A263 /* GTVideoToolbar.m */; };
+		EA64D4C324F7A57E0078A263 /* GTVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = EA64D4C224F7A57E0078A263 /* GTVideoPlayer.m */; };
 		EA8566F924DA7535002B1254 /* GTRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8566F824DA7535002B1254 /* GTRecommendViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +94,12 @@
 		EA09916224ED2DA200568A79 /* GTDeleteCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTDeleteCellView.m; sourceTree = "<group>"; };
 		EA09916524ED405A00568A79 /* GTScreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTScreen.h; sourceTree = "<group>"; };
 		EA09916624ED405A00568A79 /* GTScreen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTScreen.m; sourceTree = "<group>"; };
+		EA64D4BB24F7A4660078A263 /* GTVideoCoverView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTVideoCoverView.h; sourceTree = "<group>"; };
+		EA64D4BC24F7A4660078A263 /* GTVideoCoverView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTVideoCoverView.m; sourceTree = "<group>"; };
+		EA64D4BE24F7A55D0078A263 /* GTVideoToolbar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTVideoToolbar.h; sourceTree = "<group>"; };
+		EA64D4BF24F7A55D0078A263 /* GTVideoToolbar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTVideoToolbar.m; sourceTree = "<group>"; };
+		EA64D4C124F7A57E0078A263 /* GTVideoPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTVideoPlayer.h; sourceTree = "<group>"; };
+		EA64D4C224F7A57E0078A263 /* GTVideoPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTVideoPlayer.m; sourceTree = "<group>"; };
 		EA8566F724DA7535002B1254 /* GTRecommendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTRecommendViewController.h; sourceTree = "<group>"; };
 		EA8566F824DA7535002B1254 /* GTRecommendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTRecommendViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -191,6 +200,8 @@
 				EA09916424ED402800568A79 /* Utils */,
 				70EDC993243CAB2B007DDF1A /* loader */,
 				EA09915724EB924100568A79 /* NewsController */,
+				EA64D4BA24F7A3380078A263 /* VideoController */,
+				EA64D4B924F7A2F70078A263 /* RecommendController */,
 				70E914DC2427160C00FD835E /* AppDelegate.h */,
 				70E914DD2427160C00FD835E /* AppDelegate.m */,
 				70E914E22427160C00FD835E /* Main.storyboard */,
@@ -200,8 +211,6 @@
 				70E914EB2427160E00FD835E /* main.m */,
 				704CF3FA242BABDB00FA75A1 /* LoginViewController.h */,
 				704CF3FB242BABDB00FA75A1 /* LoginViewController.m */,
-				70EDC98D2439912B007DDF1A /* CollectionViewController.h */,
-				70EDC98E2439912B007DDF1A /* CollectionViewController.m */,
 				EA8566F724DA7535002B1254 /* GTRecommendViewController.h */,
 				EA8566F824DA7535002B1254 /* GTRecommendViewController.m */,
 			);
@@ -283,6 +292,28 @@
 				EA09916624ED405A00568A79 /* GTScreen.m */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		EA64D4B924F7A2F70078A263 /* RecommendController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RecommendController;
+			sourceTree = "<group>";
+		};
+		EA64D4BA24F7A3380078A263 /* VideoController */ = {
+			isa = PBXGroup;
+			children = (
+				70EDC98D2439912B007DDF1A /* CollectionViewController.h */,
+				70EDC98E2439912B007DDF1A /* CollectionViewController.m */,
+				EA64D4BB24F7A4660078A263 /* GTVideoCoverView.h */,
+				EA64D4BC24F7A4660078A263 /* GTVideoCoverView.m */,
+				EA64D4BE24F7A55D0078A263 /* GTVideoToolbar.h */,
+				EA64D4BF24F7A55D0078A263 /* GTVideoToolbar.m */,
+				EA64D4C124F7A57E0078A263 /* GTVideoPlayer.h */,
+				EA64D4C224F7A57E0078A263 /* GTVideoPlayer.m */,
+			);
+			path = VideoController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -383,6 +414,9 @@
 				EA8566F924DA7535002B1254 /* GTRecommendViewController.m in Sources */,
 				70E914EC2427160E00FD835E /* main.m in Sources */,
 				70EDC98F2439912B007DDF1A /* CollectionViewController.m in Sources */,
+				EA64D4C024F7A55D0078A263 /* GTVideoToolbar.m in Sources */,
+				EA64D4C324F7A57E0078A263 /* GTVideoPlayer.m in Sources */,
+				EA64D4BD24F7A4660078A263 /* GTVideoCoverView.m in Sources */,
 				EA09915C24EB9D7D00568A79 /* GTListItem.m in Sources */,
 				EA09916024EBC0BC00568A79 /* GTDetailViewController.m in Sources */,
 				70EDC996243CAB84007DDF1A /* GTListLoader.m in Sources */,

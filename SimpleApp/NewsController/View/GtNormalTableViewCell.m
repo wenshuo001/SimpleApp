@@ -112,7 +112,8 @@
     
  }
 
-
+//respondsToSelector 用来判断某一个方法时候实现
+//这个方法实现了，那么就去调用，防止出现异常
 - (void)deleteButtonClick {
     if (self.delegate && [self.delegate respondsToSelector:@selector(tableViewCell:clickDeleteButton:)]) {
         [self.delegate tableViewCell:self clickDeleteButton:self.deleteButton];
