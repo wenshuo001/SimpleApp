@@ -12,7 +12,6 @@
 		70E914E12427160C00FD835E /* GTNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E914E02427160C00FD835E /* GTNewsViewController.m */; };
 		70E914E42427160C00FD835E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70E914E22427160C00FD835E /* Main.storyboard */; };
 		70E914E62427160D00FD835E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70E914E52427160D00FD835E /* Assets.xcassets */; };
-		70E914E92427160D00FD835E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70E914E72427160D00FD835E /* LaunchScreen.storyboard */; };
 		70E914EC2427160E00FD835E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E914EB2427160E00FD835E /* main.m */; };
 		70EDC98F2439912B007DDF1A /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70EDC98E2439912B007DDF1A /* CollectionViewController.m */; };
 		70EDC992243C3A21007DDF1A /* GtNormalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 70EDC991243C3A21007DDF1A /* GtNormalTableViewCell.m */; };
@@ -22,6 +21,8 @@
 		EA09916024EBC0BC00568A79 /* GTDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA09915F24EBC0BC00568A79 /* GTDetailViewController.m */; };
 		EA09916324ED2DA200568A79 /* GTDeleteCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA09916224ED2DA200568A79 /* GTDeleteCellView.m */; };
 		EA09916724ED405A00568A79 /* GTScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = EA09916624ED405A00568A79 /* GTScreen.m */; };
+		EA553A54250611B700F0A51F /* GTSplashView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA553A53250611B700F0A51F /* GTSplashView.m */; };
+		EA553A572506224800F0A51F /* icon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EA553A562506224800F0A51F /* icon.bundle */; };
 		EA64D4BD24F7A4660078A263 /* GTVideoCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA64D4BC24F7A4660078A263 /* GTVideoCoverView.m */; };
 		EA64D4C024F7A55D0078A263 /* GTVideoToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = EA64D4BF24F7A55D0078A263 /* GTVideoToolbar.m */; };
 		EA64D4C324F7A57E0078A263 /* GTVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = EA64D4C224F7A57E0078A263 /* GTVideoPlayer.m */; };
@@ -76,7 +77,6 @@
 		70E914E02427160C00FD835E /* GTNewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTNewsViewController.m; sourceTree = "<group>"; };
 		70E914E32427160C00FD835E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		70E914E52427160D00FD835E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		70E914E82427160D00FD835E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		70E914EA2427160E00FD835E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70E914EB2427160E00FD835E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		70EDC98D2439912B007DDF1A /* CollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
@@ -94,6 +94,9 @@
 		EA09916224ED2DA200568A79 /* GTDeleteCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTDeleteCellView.m; sourceTree = "<group>"; };
 		EA09916524ED405A00568A79 /* GTScreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTScreen.h; sourceTree = "<group>"; };
 		EA09916624ED405A00568A79 /* GTScreen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTScreen.m; sourceTree = "<group>"; };
+		EA553A52250611B700F0A51F /* GTSplashView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTSplashView.h; sourceTree = "<group>"; };
+		EA553A53250611B700F0A51F /* GTSplashView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTSplashView.m; sourceTree = "<group>"; };
+		EA553A562506224800F0A51F /* icon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = icon.bundle; sourceTree = "<group>"; };
 		EA64D4BB24F7A4660078A263 /* GTVideoCoverView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTVideoCoverView.h; sourceTree = "<group>"; };
 		EA64D4BC24F7A4660078A263 /* GTVideoCoverView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTVideoCoverView.m; sourceTree = "<group>"; };
 		EA64D4BE24F7A55D0078A263 /* GTVideoToolbar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTVideoToolbar.h; sourceTree = "<group>"; };
@@ -197,6 +200,7 @@
 		70E914DB2427160C00FD835E /* SimpleApp */ = {
 			isa = PBXGroup;
 			children = (
+				EA553A562506224800F0A51F /* icon.bundle */,
 				EA09916424ED402800568A79 /* Utils */,
 				70EDC993243CAB2B007DDF1A /* loader */,
 				EA09915724EB924100568A79 /* NewsController */,
@@ -206,7 +210,6 @@
 				70E914DD2427160C00FD835E /* AppDelegate.m */,
 				70E914E22427160C00FD835E /* Main.storyboard */,
 				70E914E52427160D00FD835E /* Assets.xcassets */,
-				70E914E72427160D00FD835E /* LaunchScreen.storyboard */,
 				70E914EA2427160E00FD835E /* Info.plist */,
 				70E914EB2427160E00FD835E /* main.m */,
 				704CF3FA242BABDB00FA75A1 /* LoginViewController.h */,
@@ -290,6 +293,8 @@
 			children = (
 				EA09916524ED405A00568A79 /* GTScreen.h */,
 				EA09916624ED405A00568A79 /* GTScreen.m */,
+				EA553A52250611B700F0A51F /* GTSplashView.h */,
+				EA553A53250611B700F0A51F /* GTSplashView.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -374,9 +379,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70E914E92427160D00FD835E /* LaunchScreen.storyboard in Resources */,
 				70E914E62427160D00FD835E /* Assets.xcassets in Resources */,
 				70E914E42427160C00FD835E /* Main.storyboard in Resources */,
+				EA553A572506224800F0A51F /* icon.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +423,7 @@
 				EA64D4C324F7A57E0078A263 /* GTVideoPlayer.m in Sources */,
 				EA64D4BD24F7A4660078A263 /* GTVideoCoverView.m in Sources */,
 				EA09915C24EB9D7D00568A79 /* GTListItem.m in Sources */,
+				EA553A54250611B700F0A51F /* GTSplashView.m in Sources */,
 				EA09916024EBC0BC00568A79 /* GTDetailViewController.m in Sources */,
 				70EDC996243CAB84007DDF1A /* GTListLoader.m in Sources */,
 				70E914DE2427160C00FD835E /* AppDelegate.m in Sources */,
@@ -435,14 +441,6 @@
 				70E914E32427160C00FD835E /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		70E914E72427160D00FD835E /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				70E914E82427160D00FD835E /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -563,6 +561,7 @@
 			baseConfigurationReference = 6B1C8E8651F55F1904177DE7 /* Pods-SimpleApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SimpleApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -593,6 +592,7 @@
 			baseConfigurationReference = 948E793E9F565A5E7310A1D9 /* Pods-SimpleApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SimpleApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

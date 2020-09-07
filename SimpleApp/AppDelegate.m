@@ -11,7 +11,7 @@
 #import "LoginViewController.h"
 #import "CollectionViewController.h"
 #import "GTRecommendViewController.h"
-
+#import "GTSplashView.h"
 @interface AppDelegate ()<UITabBarControllerDelegate>
 
 @end
@@ -50,6 +50,11 @@
     //如果要底部不出现 tabbar 必须设置 rootViewController 为 uinavigatController
     self.window.rootViewController = uinavigatController;
     [self.window makeKeyAndVisible];
+    
+    [self.window addSubview:({
+        GTSplashView *splashView = [[GTSplashView alloc] initWithFrame:self.window.bounds];
+        splashView;
+    })];
     return YES;
 }
 
