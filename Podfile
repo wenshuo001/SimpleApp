@@ -6,6 +6,7 @@ inhibit_all_warnings!
 target 'SimpleApp' do
   pod 'AFNetworking'
   pod 'SDWebImage'
-  pod 'CocoaLumberjack' 
+  pod 'CocoaLumberjack'
+  pod 'MJRefresh'
   pod 'IGListKit', '~> 4.0.0'
 end

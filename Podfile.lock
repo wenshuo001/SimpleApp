@@ -20,6 +20,7 @@ PODS:
   - IGListDiffKit (4.0.0)
   - IGListKit (4.0.0):
     - IGListDiffKit (= 4.0.0)
+  - MJRefresh (3.5.0)
   - SDWebImage (5.8.4):
     - SDWebImage/Core (= 5.8.4)
   - SDWebImage/Core (5.8.4)
@@ -28,6 +29,7 @@ DEPENDENCIES:
   - AFNetworking
   - CocoaLumberjack
   - IGListKit (~> 4.0.0)
+  - MJRefresh
   - SDWebImage
 
 SPEC REPOS:
@@ -36,6 +38,7 @@ SPEC REPOS:
     - CocoaLumberjack
     - IGListDiffKit
     - IGListKit
+    - MJRefresh
     - SDWebImage
 
 SPEC CHECKSUMS:
@@ -43,8 +46,9 @@ SPEC CHECKSUMS:
   CocoaLumberjack: bd155f2dd06c0e0b03f876f7a3ee55693122ec94
   IGListDiffKit: 665d6cf43ce726e676013db9c7d6c4294259b6b2
   IGListKit: fd5a5d21935298f5849fa49d426843cff97b77c7
+  MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
   SDWebImage: cf6922231e95550934da2ada0f20f2becf2ceba9
 
-PODFILE CHECKSUM: 76606b34cbc6d8d56925a321caeec4dc785140d0
+PODFILE CHECKSUM: 07c4be3c6e6bec19d868e41383982b76b6fab105
 
 COCOAPODS: 1.10.0.beta.2

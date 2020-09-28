@@ -4,6 +4,7 @@
 //
 //  Created by 库兹马 on 2020/9/7.
 //  Copyright © 2020 Wenshuo. All rights reserved.
+//  if(Build.VERSION.SDK_INT>=21){
 //
 
 #import "GTSplashView.h"

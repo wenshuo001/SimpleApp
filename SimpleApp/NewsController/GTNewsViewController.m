@@ -10,7 +10,7 @@
 #import "GtNormalTableViewCell.h"
 #import "GTListLoader.h"
 #import "GTDeleteCellView.h"
-
+#import "MJRefresh.h"
 #import <AFNetworking.h>
 #import "GTDetailViewController.h"
 
@@ -27,18 +27,18 @@
 {
     self = [super init];
     if (self) {
-    
+        
         self.tabBarItem.title = @"新闻";
         self.tabBarItem.image = [UIImage imageNamed:@"首页1-1"];
         self.tabBarItem.selectedImage = [UIImage imageNamed:@"首页1"];
-    
+        
     }
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     _tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
     _tableView.dataSource = self;
     _tableView.delegate = self;
@@ -55,14 +55,43 @@
         [strongSelf.tableView reloadData];
     }];
     
-//
-//    [[AFHTTPSessionManager manager] GET:@"https://wanandroid.com/wxarticle/chapters/json" parameters:nil headers:nil progress:^(NSProgress * _Nonnull downloadProgress) {
-//
-//    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//
-//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-//
-//    }];
+    //
+    //    [[AFHTTPSessionManager manager] GET:@"https://wanandroid.com/wxarticle/chapters/json" parameters:nil headers:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    //
+    //    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    //
+    //    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    //
+    //    }];
+    //1. 首先加入依赖
+    // pod 'MJRefresh'
+    //2.引入头文件
+    // #import "MJRefresh.h"
+    //3.使用
+    _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [_tableView.mj_header beginRefreshing];
+        // 模拟延迟加载数据，因此2秒后才调用（真实开发中，可以移除这段gcd代码）
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            
+            [_tableView.mj_header beginRefreshing];
+            //[_tableView reloadData];
+            
+            // 结束刷新
+            [_tableView.mj_header endRefreshing];
+        });
+    }];
+    //上拉加载
+    _tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+       
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            // 结束刷新
+            [_tableView.mj_footer endRefreshing];
+            
+        });
+    }];
+    
+    
+    
 }
 
 //设置表格视图有多少行
@@ -107,11 +136,11 @@
 
 // 设置行高
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-     
-        return 100;
-  
+    
+    return 100;
+    
 }
- 
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"这是第 %@",indexPath);
     GTListItem *item = [self.dataArray objectAtIndex:indexPath.row];
@@ -149,16 +178,16 @@
     
     return @[@"1",@"2"];
 }
- 
+
 - (void)tableViewCell:(UITableViewCell *)tableViewCell clickDeleteButton:(UIButton *)deleteButton {
     
     //动画演示
     GTDeleteCellView *deleteView = [[GTDeleteCellView alloc] initWithFrame:self.view.bounds];
     CGRect rect = [tableViewCell convertRect:deleteButton.frame toView:nil];
-
+    
     __weak typeof(self)wself = self;
     [deleteView showDeleteViewFromPoint:rect.origin clickBlock:^{
-         __strong typeof(wself) strongSelf = wself;
+        __strong typeof(wself) strongSelf = wself;
         NSIndexPath *delIndexPath = [strongSelf.tableView indexPathForCell:tableViewCell];
         if (strongSelf.dataArray.count > delIndexPath.row) {
             //删除数据
@@ -168,6 +197,6 @@
             //删除cell
             [strongSelf.tableView deleteRowsAtIndexPaths:@[delIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
         }
-     }];
+    }];
 }
 @end
